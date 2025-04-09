@@ -14,6 +14,10 @@ RUN apt-get update && apt-get install -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+# sudo für evtl. manuelle Nachinstallationen
+RUN apt-get update && apt-get install -y sudo
+RUN apt-get install -y neovim
+
 RUN npm install -g @ui5/cli
 RUN npm install -g @sap/ux-ui5-tooling
 
@@ -51,5 +55,5 @@ RUN curl -o actions-runner-linux-x64-2.323.0.tar.gz -L https://github.com/action
 RUN tar xzf ./actions-runner-linux-x64-2.323.0.tar.gz
 
 CMD ["./run.sh"]
-
+RUN echo 'docker run -it -e RUNNER_TOKEN= -e REPO_URL= --name runner runner-image  to start'
 RUN echo 'docker exec -it --user root <container> eslint --init  to setup eslint'
