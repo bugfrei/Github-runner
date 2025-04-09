@@ -17,9 +17,13 @@ RUN apt-get update && apt-get install -y \
 # sudo für evtl. manuelle Nachinstallationen
 RUN apt-get update && apt-get install -y sudo
 RUN apt-get install -y neovim
+RUN apt-get install -y cf8-cli
+RUN apt-get install -y jq
 
 RUN npm install -g @ui5/cli
 RUN npm install -g @sap/ux-ui5-tooling
+RUN npm install -g mbt
+
 
 RUN npm i -g @sap/cds-dk
 
