@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y sudo
 RUN apt-get install wget -y
 
-RUN wget -q https://packages.cloudfoundry.org/stable?release=debian64 -O cf8-cli.deb & sudo dpkg -i cf8-cli.deb
+RUN wget -q https://packages.cloudfoundry.org/stable?release=debian64 -O cf8-cli.deb && sudo dpkg -i cf8-cli.deb
 
 RUN apt-get install -y neovim
 RUN apt-get install -y jq
