@@ -18,7 +18,7 @@ jobs:
       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
     - name: Build the Docker image
-      run: docker build -t runner-image .
+      run: docker build --plattform linux/arm64 -t runner-image .
 
     - name: Tagging
       run: docker tag runner-image bugfrei/github-runner:latest
